@@ -10,7 +10,7 @@ class Item(SQLModel, table=True):
     __tablename__ = "items"
     
     name: str = Field(unique=True, index=True, min_length=3, max_length=256)
-    desciption: str = Field()
+    description: str = Field()
     item_id: UUID = Field(default_factory=uuid4, primary_key=True)
     quantity: int | None = Field(default=0, ge=0)
     reserved: int | None = Field(default=0, ge=0)

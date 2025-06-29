@@ -43,7 +43,6 @@ def _(order: UpdateByNewOrder):
 
 @db_work.register
 def _(model: UpdateBySupply):
-    print("NEW SUPPLY")
     with get_session() as session:
         for item in model.items:
             db_item = session.get(Item, item.item_id)
